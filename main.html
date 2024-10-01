@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عبدالرحمن لطف الحذيفي</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial, sans-serif';
+    text-align: center;
+    background: linear-gradient(135deg, #232526, #414345);
+    background-size: 200% 200%;
+    animation: backgroundShift 30s ease infinite;
+  }
+
+  @keyframes backgroundShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    margin: 40px 20px;
+  }
+
+  .profile-image {
+    border-radius: 50%;
+    width: 175px;
+    height: 175px;
+    background: url('your-profile-image.jpg') no-repeat center;
+    background-size: cover;
+    margin: 5px;
+  }
+
+  .title {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin: 5px;
+  }
+
+  .sub-title {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+
+  .button-main {
+    display: block;
+    width: 80%;
+    padding: 15px;
+    margin: 10px auto;
+    font-size: 1em;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Clean and subtle hover effect */
+  .button-main:hover {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2), 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .call-button {
+    background: linear-gradient(45deg, #00bcd4, #008394);
+  }
+
+  .whatsapp-button {
+    background: linear-gradient(120deg, #25D366, #25d366);
+  }
+
+  .instagram-button {
+    background: linear-gradient(35deg, #f9ce34, #ee2a7b, #6228d7);
+  }
+
+  .tiktok-button {
+    background: linear-gradient(45deg, #042f33, black, black, #75182a);
+  }
+
+  .telegram-button {
+    background: #0088cc;
+  }
+
+  .facebook-button {
+    background: #3a5998;
+  }
+
+  /* Overlay styling */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+
+  .overlay-content {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(15px);
+    color: #fff;
+  }
+
+  .overlay-content h2 {
+    margin-bottom: 20px;
+  }
+
+  .overlay-content button {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    width: 100%;
+    padding: 15px;
+    margin: 10px auto;
+    border: none;
+    border-radius: 25px;
+    font-size: 1em;
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .overlay-content button:hover {
+    background: rgba(255, 255, 255, 0.5);
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2), 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .close-button {
+    background-color: #ff4444;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .close-button:hover {
+    box-shadow: 0px 6px 12px rgba(255, 255, 255, 0.2), 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  /* WhatsApp-specific buttons */
+  .whatsapp-sub-button {
+    background: linear-gradient(120deg, #25D366, #25d366);
+    color: white;
+  }
+</style>
+<script>
+  // Show or hide overlays
+  function showOverlay(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+
+  function hideOverlay(id) {
+    document.getElementById(id).style.display = "none";
+  }
+
+  // Call a phone number
+  function makePhoneCall(number) {
+    window.location.href = "tel:" + number;
+  }
+
+  // Open WhatsApp for a specific number
+  function openWhatsApp(number) {
+    window.open("https://wa.me/" + number, "_blank");
+  }
+
+  // Navigate to specific social media platforms
+  function navigateTo(platform, usernameOrLink) {
+    let url = '';
+    switch(platform) {
+      case 'Instagram':
+        url = 'https://instagram.com/' + usernameOrLink;
+        break;
+      case 'TikTok':
+        url = 'https://www.tiktok.com/@' + usernameOrLink;
+        break;
+      case 'facebook':
+        url = usernameOrLink; // Direct Facebook link
+        break;
+      case 'Telegram':
+        url = usernameOrLink; // Direct Telegram link
+        break;
+      default:
+        console.error('Unknown platform');
+    }
+    window.open(url, '_blank');
+  }
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="profile-image"></div>
+  <h2 class="title">عبدالرحمن لطف الحذيفي</h2>
+  <h2 class="sub-title">أعمال</h2>
+
+  <!-- Main Button for Calls -->
+  <button onclick="showOverlay('call-overlay')" class="button-main call-button">اتصال هاتفي</button>
+
+  <!-- Main Button for WhatsApp -->
+  <button onclick="showOverlay('whatsapp-overlay')" class="button-main whatsapp-button">واتساب</button>
+
+  <!-- Other Social Media Buttons -->
+  <button onclick="navigateTo('Instagram', 'a.man_lutf')" class="button-main instagram-button">إنستجرام</button>
+  
+  <button onclick="navigateTo('facebook', 'https://www.facebook.com/profile.php?id=100013552033768&mibextid=ZbWKwL')" class="button-main facebook-button">فيسبوك</button>
+  <button onclick="navigateTo('Telegram', 'https://t.me/Abdulrahman_alhuthaifi')" class="button-main telegram-button">تيليجرام</button>
+</div>
+
+<!-- Overlay for Call Options -->
+<div id="call-overlay" class="overlay">
+  <div class="overlay-content">
+    <h2>اختر الرقم للاتصال</h2>
+    <button onclick="makePhoneCall('+967736708***')"> YOU (غير متاح) </button>
+    <button onclick="makePhoneCall('+967781253831')"> يمن موبايل </button>
+    <button class="close-button" onclick="hideOverlay('call-overlay')">إغلاق</button>
+  </div>
+</div>
+
+<!-- Overlay for WhatsApp Options -->
+<div id="whatsapp-overlay" class="overlay">
+  <div class="overlay-content">
+    <h2>اختر رقم الواتساب</h2>
+    <button onclick="openWhatsApp('967736708196')" class="whatsapp-sub-button"> YOU </button>
+    <button onclick="openWhatsApp('967781253831')" class="whatsapp-sub-button"> Yemen Mobile </button>
+    <button class="close-button" onclick="hideOverlay('whatsapp-overlay')">إغلاق</button>
+  </div>
+</div>
+</body>
+</html>
