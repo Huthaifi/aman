@@ -231,7 +231,18 @@
   <button onclick="navigateTo('Instagram', 'a.man_lutf')" class="button-main instagram-button">إنستجرام</button>
   
   <button onclick="navigateTo('facebook', 'https://www.facebook.com/profile.php?id=100013552033768&mibextid=ZbWKwL')" class="button-main facebook-button">فيسبوك</button>
-  <button onclick="navigateTo('Telegram', 'https://t.me/Abdulrahman_alhuthaifi')" class="button-main telegram-button">تيليجرام</button>
+  <!-- Main Telegram Button -->
+<button onclick="showOverlay('telegram-overlay')" class="button-main telegram-button">تيليجرام</button>
+
+<!-- Overlay for Telegram Options -->
+<div id="telegram-overlay" class="overlay">
+  <div class="overlay-content">
+    <h2>اختر قناة تيليجرام</h2>
+    <button onclick="navigateTo('Telegram', 'https://t.me/Abdulrahman_alhuthaifi')" class="whatsapp-sub-button">تيليجرام شخصي</button>
+    <button onclick="navigateTo('Telegram', 'https://t.me/a_man_ym')" class="whatsapp-sub-button">تيليجرام القناة</button>
+    <button class="close-button" onclick="hideOverlay('telegram-overlay')">إغلاق</button>
+  </div>
+</div>
 </div>
 
 <!-- Overlay for Call Options -->
