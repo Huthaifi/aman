@@ -295,6 +295,14 @@
   }
   .close-btn:hover { color: var(--ink); border-color: var(--border); }
 
+  .seal-photo {
+  width: 82%;
+  height: 82%;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  }
+
   /* ---------- Accessibility floor ---------- */
   button:focus-visible, a:focus-visible {
     outline: 2px solid var(--gold-bright);
@@ -322,7 +330,7 @@
       <path id="ringTextPath" d="M22,104 A82,82 0 0 1 186,104" fill="none"/>
       <text class="ring-text" direction="rtl"><textPath href="#ringTextPath" startOffset="50%" text-anchor="middle">أعمال</textPath></text>
     </svg>
-    <span class="seal-mark" aria-hidden="true">ع</span>
+    <img class="seal-photo" src="profile-avatar.png" alt="عبدالرحمن لطف الحذيفي">
   </div>
 
   <h1 class="name"><span class="name-reveal">عبدالرحمن لطف الحذيفي</span></h1>
